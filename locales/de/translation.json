@@ -1,5 +1,22 @@
 {
   "title": "Willkommen zu react und react-i18next",
+  "home": {
+    "connecting_those_affected" : "DE - Connecting those affected by COVID-19",
+    "what_would_you_like_to_do" : "DE - What would you like to do?",
+    "i_need_help" : "DE - I need help",
+    "i_want_to_help" : "DE - I want to help"
+  },
+  "requester" : {
+    "how_it_works" : {
+      "step_1" : {
+        "title": "DE - How it Works Step 1",
+        "description" : "DE - Lorem ipsum Stuff"
+      }
+    }
+  },
+  "how_it_works" : {
+    "title" : "DE - How it works"
+  },
   "description": {
     "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> speicheren und neuladen.",
     "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
