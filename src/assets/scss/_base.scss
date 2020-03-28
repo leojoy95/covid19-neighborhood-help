@@ -17,6 +17,8 @@ body {
   text-size-adjust: 100%;
   max-width: $breakpoint-large;
   margin: 0 auto;
+  background: #394bbb;
+  color:#fff;
 }
 
 /* =Links */
@@ -57,7 +59,7 @@ fieldset legend {  }
 button,
 input,
 select,
-textarea { }
+textarea { color:#111; }
 textarea { }
 
 ::-webkit-input-placeholder { color: #000000; }
@@ -78,3 +80,20 @@ input[type="submit"] {  }
 textarea {  }
 
 select                      { }
+
+
+
+// App Styles
+
+.bucket{
+  background:#fff;
+  padding: 20px;
+  display: inline-block;
+  margin: 10px;
+  &:first-child{
+    margin-left: 0;
+  }
+}
+.bucket-link{
+  text-decoration: none;
+}

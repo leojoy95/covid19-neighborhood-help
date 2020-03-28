@@ -6,31 +6,40 @@ import React, { Component } from 'react';
 import {Carousel} from '../carousel';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
-
+// Images
+import requestIcon from '../../assets/img/requester.svg';
 
 
 // Volunteer Page
 export class RequesterHowItWorks extends React.Component {
-  
-  
-  clicky(){
-    alert('test');
-    //i18n.changeLanguage('de');
-  }
 
   render () {
     return (
       <React.Fragment>
-        <h2 onClick={this.clicky}>This is how it works</h2>
-        <Trans i18nKey="title">
-          title
-        </Trans>
-        <Carousel type="requester" />
+        <Page />
       </React.Fragment>
     );
   }
 }
 
+
+// page uses the hook
+function Page() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+      <React.Fragment>
+        <h2>{t('how_it_works.title')}</h2>
+        <img src={requestIcon} alt="Request Icon" />
+        <h3>{t('requester.how_it_works.step_1.title')}</h3>
+        <p>{t('requester.how_it_works.step_1.description')}</p>
+      </React.Fragment>
+  );
+}
 
 
 

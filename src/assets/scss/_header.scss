@@ -1,5 +1,12 @@
 header{ }
 
+.logo{
+    float: left;
+    margin-right: 10px;
+    color:#fff;
+    font-size:1.5em
+}
+
 @media only screen and (min-width: $breakpoint-small) {
 
 }

@@ -10,24 +10,14 @@ import {
 import FirebaseProvider  from './context/firebase';
 import { RequesterPage } from './components/requester/requester-page';
 import { VolunteerPage } from './components/volunteer/volunteer-page';
-import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
+// Images
+import requestIcon from './assets/img/requester.svg';
 
-
-
-
-
-// Component using the Trans component
-function MyComponent() {
-  return (
-    <Trans i18nKey="description.part1">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </Trans>
-  );
-}
 
 // page uses the hook
-function Page() {
+function LanguageToggle() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = lng => {
@@ -35,16 +25,10 @@ function Page() {
   };
 
   return (
-    <div className="App">
-      <div className="App-header">
+      <div className="language-selection-container">
         <button onClick={() => changeLanguage('de')}>de</button>
         <button onClick={() => changeLanguage('en')}>en</button>
       </div>
-      <div className="App-intro">
-        <MyComponent />
-      </div>
-      <div>{t('description.part2')}</div>
-    </div>
   );
 }
 
@@ -54,10 +38,12 @@ export default function App() {
   return (
 
       <FirebaseProvider>
-        <h1>Hello</h1>
-        <Page />
+        
         <Router>
-          <div>
+          <header>
+            <Link className="logo" to="/">[Logo]</Link>
+            <LanguageToggle />
+          </header>
             <Switch>
               <Route path="/request">
                 <RequesterPage />
@@ -72,7 +58,7 @@ export default function App() {
               </Route>
 
             </Switch>
-          </div>
+
         </Router>
       </FirebaseProvider>
   );
@@ -83,11 +69,28 @@ export default function App() {
 
 
 function Home() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <nav>
-      <Link className="main-choice" to="/request">Request</Link>
-      <Link className="main-choice" to="/volunteer">Volunteer</Link>
-    </nav>
+    <React.Fragment>
+      <h2>{t('home.connecting_those_affected')}</h2>
+      <h3>{t('home.what_would_you_like_to_do')}</h3>
+      
+      <nav>
+        <Link className="bucket bucket-link" to="/request">
+          <img src={requestIcon} alt="Request Icon" />
+          {t('home.i_need_help')}
+        </Link>
+        <Link className="bucket bucket-link" to="/volunteer">
+          <img src={requestIcon} alt="Request Icon" />
+          {t('home.i_want_to_help')}
+        </Link>
+      </nav>
+    </React.Fragment>
   );
 }
 

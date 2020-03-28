@@ -3,18 +3,11 @@ import React, { Component } from 'react';
 
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link,
-    useRouteMatch,
-    useParams
+    useRouteMatch
   } from "react-router-dom";
 
-
-
-import {Carousel} from '../carousel';
-
-import * as firebase from 'firebase';
 
 import { RequesterForm } from './requester-form';
 import { RequesterHowItWorks } from './requester-how-it-works';
@@ -44,6 +37,7 @@ export class RequesterPage extends React.Component {
   render () {
     return (
       <React.Fragment>
+        <RequesterHowItWorks />
         <Request />
       </React.Fragment>
     );
@@ -63,7 +57,7 @@ function Request() {
   
         <ul>
           <li>
-            <Link to={`${match.url}/step-1`}>Step 1</Link>
+            <Link to={`${match.url}/step-1`}>Skip</Link>
           </li>
           <li>
             <Link to={`${match.url}/step-2`}>
@@ -72,7 +66,7 @@ function Request() {
           </li>
         </ul>
 
-        <Route path={`${match.url}/step-1`} component={RequesterHowItWorks} />
+        <Route path={`${match.url}/step-1`} component={RequesterForm} />
         <Route path={`${match.url}/step-2`} component={RequesterForm} />
 
       </div>
