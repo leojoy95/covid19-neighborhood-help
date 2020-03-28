@@ -17,7 +17,7 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: true,
-    backend: {loadPath: '/public/locales/{{lng}}/{{ns}}.json'},
+    backend: {loadPath: './public/locales/{{lng}}/{{ns}}.json'},
     
 
     interpolation: {
