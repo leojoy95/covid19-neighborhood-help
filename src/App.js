@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Link
 } from "react-router-dom";
 
 
-import FirebaseProvider from './context/firebase';
-import {RequesterPage} from './components/requester/requester-page';
-import {VolunteerPage} from './components/volunteer/volunteer-page';
+import FirebaseProvider  from './context/firebase';
+import { RequesterPage } from './components/requester/requester-page';
+import { VolunteerPage } from './components/volunteer/volunteer-page';
 
 
 
