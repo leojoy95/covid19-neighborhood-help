@@ -11,6 +11,7 @@ import {
 
 import { RequesterForm } from './requester-form';
 import { RequesterHowItWorks } from './requester-how-it-works';
+import { RequesterComplete } from './requester-complete';
 
 
 /*
@@ -37,7 +38,6 @@ export class RequesterPage extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <RequesterHowItWorks />
         <Request />
       </React.Fragment>
     );
@@ -57,17 +57,25 @@ function Request() {
   
         <ul>
           <li>
+            <Link to={`${match.url}/how-it-works`}>How It Works</Link>
+          </li>
+          <li>
             <Link to={`${match.url}/step-1`}>Skip</Link>
           </li>
           <li>
-            <Link to={`${match.url}/step-2`}>
-              Step 2
-            </Link>
+            <Link to={`${match.url}/step-2`}>Step 2</Link>
+          </li>
+
+          <li>
+            <Link to={`${match.url}/complete`}>Complete</Link>
           </li>
         </ul>
 
+
+        <Route path={`${match.url}/how-it-works`} component={RequesterHowItWorks} />
         <Route path={`${match.url}/step-1`} component={RequesterForm} />
         <Route path={`${match.url}/step-2`} component={RequesterForm} />
+        <Route path={`${match.url}/complete`} component={RequesterComplete} />
 
       </div>
     );

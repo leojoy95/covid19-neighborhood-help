@@ -28,6 +28,9 @@ function Volunteer() {
   const [list, setList] = useState(null);
   const ref = firebase.firestore().collection(`requests`);
 
+  console.log(ref);
+  
+
   useEffect(() => {
     ref.get().then(snapshot => {
       if (!snapshot) {
@@ -35,8 +38,6 @@ function Volunteer() {
       } else {
         let requests = []
         snapshot.forEach(request => {
-          console.log(request);
-          console.log(request.data());
           requests.push({ key: request.id, ...request.data() })
         })
         setList(l => requests)

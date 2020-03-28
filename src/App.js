@@ -16,6 +16,45 @@ import { useTranslation, Trans } from 'react-i18next';
 import requestIcon from './assets/img/requester.svg';
 
 
+
+
+
+
+
+class LanguageSelect extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      isHidden: true
+    }
+  }
+  toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+  render () {
+    return (
+      <div>
+        <button onClick={this.toggleHidden.bind(this)} >
+          Select Lang
+        </button>
+        {!this.state.isHidden && <LanguageToggle />}
+      </div>
+    )
+  }
+}
+
+const Child = () => (
+<div className='modal'>
+      Hello, World!
+  </div>
+)
+
+
+
+
+
 // page uses the hook
 function LanguageToggle() {
   const { t, i18n } = useTranslation();
@@ -25,10 +64,12 @@ function LanguageToggle() {
   };
 
   return (
+    <React.Fragment>
       <div className="language-selection-container">
         <button onClick={() => changeLanguage('de')}>de</button>
         <button onClick={() => changeLanguage('en')}>en</button>
       </div>
+      </React.Fragment>
   );
 }
 
@@ -40,10 +81,9 @@ export default function App() {
       <FirebaseProvider>
         
         <Router>
-          <header>
-            <Link className="logo" to="/">[Logo]</Link>
-            <LanguageToggle />
-          </header>
+            
+            
+
             <Switch>
               <Route path="/request">
                 <RequesterPage />
@@ -54,6 +94,10 @@ export default function App() {
               </Route>
 
               <Route path="/">
+                <header>
+                  <Link className="logo" to="/">[Logo]</Link>
+                  <LanguageSelect />
+                </header>
                 <Home />
               </Route>
 
