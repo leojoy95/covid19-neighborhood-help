@@ -15,12 +15,6 @@ import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 
 
-// loading component for suspense fallback
-const Loader = () => (
-  <div className="App">
-    <div>loading...</div>
-  </div>
-);
 
 
 // Component using the Trans component
@@ -59,7 +53,6 @@ export default function App() {
 
   return (
 
-    <Suspense fallback={<Loader />}>
       <FirebaseProvider>
         <h1>Hello</h1>
         <Page />
@@ -82,7 +75,6 @@ export default function App() {
           </div>
         </Router>
       </FirebaseProvider>
-    </Suspense>
   );
 }
 

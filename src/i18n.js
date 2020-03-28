@@ -17,8 +17,6 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: true,
-    backend: {loadPath: './public/locales/{{lng}}/{{ns}}.json'},
-    
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
