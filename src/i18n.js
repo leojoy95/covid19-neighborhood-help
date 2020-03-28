@@ -6,10 +6,14 @@ import { initReactI18next } from 'react-i18next';
 i18n
   // load translation using xhr -> see /public/locales
   // learn more: https://github.com/i18next/i18next-xhr-backend
-  .use(Backend)
-  // detect user language
-  // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
+  .use(Backend).init({
+    backend: {
+      loadPath: '/covid19-neighborhood-help/locales/{{lng}}/{{ns}}.json',
+    }
+  });
+// detect user language
+// learn more: https://github.com/i18next/i18next-browser-languageDetector
+i18n.use(LanguageDetector)
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
   // init i18next
