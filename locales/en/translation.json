@@ -6,17 +6,24 @@
     "i_need_help" : "I need help",
     "i_want_to_help" : "I want to help"
   },
+
   "requester" : {
     "how_it_works" : {
       "step_1" : {
         "title": "How it Works Step 1",
         "description" : "Lorem ipsum Stuff"
       }
+    },
+    "complete" : {
+      "title" : "Thank you for your submission",
+      "description" : "A furthur description on the success page."
     }
   },
+  
   "how_it_works" : {
     "title" : "How it works"
   },
+
   "description": {
     "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
     "part2": "Switch language between english and german using buttons above."
