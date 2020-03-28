@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,43 +10,81 @@ import {
 import FirebaseProvider  from './context/firebase';
 import { RequesterPage } from './components/requester/requester-page';
 import { VolunteerPage } from './components/volunteer/volunteer-page';
+import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 
 
-export default function App() {
 
+// loading component for suspense fallback
+const Loader = () => (
+  <div className="App">
+    <div>loading...</div>
+  </div>
+);
+
+
+// Component using the Trans component
+function MyComponent() {
+  return (
+    <Trans i18nKey="description.part1">
+      To get started, edit <code>src/App.js</code> and save to reload.
+    </Trans>
+  );
+}
+
+// page uses the hook
+function Page() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
-    <FirebaseProvider>
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/request">
-            <RequesterPage />
-          </Route>
-         
-          <Route path="/volunteer">
-            <VolunteerPage />
-          </Route>
-
-          <Route path="/">
-            <Home />
-          </Route>
-
-        </Switch>
+    <div className="App">
+      <div className="App-header">
+        <button onClick={() => changeLanguage('de')}>de</button>
+        <button onClick={() => changeLanguage('en')}>en</button>
       </div>
-    </Router>
-    </FirebaseProvider>
+      <div className="App-intro">
+        <MyComponent />
+      </div>
+      <div>{t('description.part2')}</div>
+    </div>
   );
 }
 
 
+export default function App() {
 
+  return (
 
+    <Suspense fallback={<Loader />}>
+      <FirebaseProvider>
+        <h1>Hello</h1>
+        <Page />
+        <Router>
+          <div>
+            <Switch>
+              <Route path="/request">
+                <RequesterPage />
+              </Route>
+            
+              <Route path="/volunteer">
+                <VolunteerPage />
+              </Route>
 
+              <Route path="/">
+                <Home />
+              </Route>
 
-
-
+            </Switch>
+          </div>
+        </Router>
+      </FirebaseProvider>
+    </Suspense>
+  );
+}
 
 
 
