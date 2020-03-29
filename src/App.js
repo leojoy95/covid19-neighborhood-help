@@ -76,15 +76,16 @@ export default function App() {
   return (
 
       <FirebaseProvider>
-
-                
         
         <Router>
 
+            {/* 
+            // If Language and Logo need to go on every page.
             <header>
               <Link className="logo" to="/">[Logo]</Link>
               <LanguageSelect />
-            </header>
+            </header> 
+            */}
             
             <Switch>
               <Route path="/request">
@@ -96,7 +97,10 @@ export default function App() {
               </Route>
 
               <Route path="/">
-                
+                <header>
+                  <Link className="logo" to="/">[Logo]</Link>
+                  <LanguageSelect />
+                </header>
                 <Home />
               </Route>
 
