@@ -9,7 +9,7 @@ Connecting people who need help with those who can help nearby.
 https://join.slack.com/t/covidneighbor-ljq3510/shared_invite/zt-d0b90miv-kGVByFPpaXlMWuGnATbwpQ
 
 ## Latest Prototype
-https://www.figma.com/proto/4gRLsfZxKf0UFWaqraYNf8/Helpr?scaling=min-zoom
+https://www.figma.com/proto/4gRLsfZxKf0UFWaqraYNf8/Helpr?node-id=195%3A124&viewport=1063%2C423%2C1&scaling=min-zoom
 
 ## Initial Wireframes
 http://brandonbrule.com/codevid/request-volunteer-app.png
