@@ -22,7 +22,7 @@ body {
 }
 
 /* =Links */
-a           {  }
+a           { color:#eae8a2; }
 a:hover     {  }
 a:focus     {  }
 a:hover, 
@@ -85,6 +85,11 @@ select                      { }
 
 // App Styles
 
+.back-link{
+  margin-bottom: 2em;
+  display: block;
+}
+
 .bucket{
   background:#fff;
   padding: 20px;
@@ -96,4 +101,9 @@ select                      { }
 }
 .bucket-link{
   text-decoration: none;
+  color:#111
+}
+
+.wrapper{
+  //background:#fff;
 }

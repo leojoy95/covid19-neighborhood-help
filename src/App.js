@@ -18,9 +18,6 @@ import requestIcon from './assets/img/requester.svg';
 
 
 
-
-
-
 class LanguageSelect extends React.Component {
   constructor () {
     super()
@@ -79,11 +76,16 @@ export default function App() {
   return (
 
       <FirebaseProvider>
+
+                
         
         <Router>
-            
-            
 
+            <header>
+              <Link className="logo" to="/">[Logo]</Link>
+              <LanguageSelect />
+            </header>
+            
             <Switch>
               <Route path="/request">
                 <RequesterPage />
@@ -94,10 +96,7 @@ export default function App() {
               </Route>
 
               <Route path="/">
-                <header>
-                  <Link className="logo" to="/">[Logo]</Link>
-                  <LanguageSelect />
-                </header>
+                
                 <Home />
               </Route>
 
@@ -121,19 +120,21 @@ function Home() {
 
   return (
     <React.Fragment>
-      <h2>{t('home.connecting_those_affected')}</h2>
-      <h3>{t('home.what_would_you_like_to_do')}</h3>
-      
-      <nav>
-        <Link className="bucket bucket-link" to="/request">
-          <img src={requestIcon} alt="Request Icon" />
-          {t('home.i_need_help')}
-        </Link>
-        <Link className="bucket bucket-link" to="/volunteer">
-          <img src={requestIcon} alt="Request Icon" />
-          {t('home.i_want_to_help')}
-        </Link>
-      </nav>
+      <div className="container">
+        <h2>{t('home.connecting_those_affected')}</h2>
+        <h3>{t('home.what_would_you_like_to_do')}</h3>
+        
+        <nav>
+          <Link className="bucket bucket-link" to="/request/how-it-works">
+            <img src={requestIcon} alt="Request Icon" />
+            {t('home.i_need_help')}
+          </Link>
+          <Link className="bucket bucket-link" to="/volunteer">
+            <img src={requestIcon} alt="Request Icon" />
+            {t('home.i_want_to_help')}
+          </Link>
+        </nav>
+      </div>
     </React.Fragment>
   );
 }

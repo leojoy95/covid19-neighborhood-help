@@ -15,17 +15,12 @@
       }
     },
     "complete" : {
-      "title" : "Thank you for your submission",
-      "description" : "A furthur description on the success page."
+      "request_sent": "Request sent, <1>{{name}}</1>.",
+      "description" : "We hope someone can help."
     }
   },
   
   "how_it_works" : {
     "title" : "How it works"
-  },
-
-  "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-    "part2": "Switch language between english and german using buttons above."
   }
 }
