@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://brandonbrule.github.io/covid19-neighborhood-help",
+  "homepage": "https://covid-19-neighborhood-help.web.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "firebase-tools": "^7.16.1",
     "gh-pages": "^2.2.0"
   }
 }
